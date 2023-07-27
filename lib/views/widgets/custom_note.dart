@@ -24,7 +24,7 @@ class NoteItem extends StatelessWidget {
               padding: EdgeInsets.only(top: 16.0),
               child: Text(
                 "make your career with tharwhat",
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+                style: TextStyle(color: Colors.grey, fontSize: 18),
               ),
             ),
             trailing: IconButton(

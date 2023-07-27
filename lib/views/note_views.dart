@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:note_app/views/widgets/custom_appbar.dart';
-import 'package:note_app/views/widgets/custom_note.dart';
+import 'package:note_app/views/widgets/add_note_buttom_sheet.dart';
+import 'package:note_app/views/widgets/note_view_list.dart';
 
 class NoteView extends StatelessWidget {
   const NoteView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            children: [
-              CustomAppBar(),
-              NoteItem(),
-            ],
-          ),
-        ),
-      ),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16)
+              ),
+              context: context,
+              builder: (context) {
+                return const AddBottomSheet();
+              },
+            );
+          },
+          child: const Icon(Icons.add)),
+      body: const NoteViewList(),
     );
   }
 }
+
